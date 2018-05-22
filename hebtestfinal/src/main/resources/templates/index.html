@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>H.E.B. Grocer Inventory System</title>
+  	<link rel="icon" href="h_flavor.png" sizes="16x16" type="image/png">
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="js/src/jqueryAjaxGet.js"></script>    
+	<script src="js/src/postJqueryAjax.js"></script>
+  </head>
+  <body>
+    <img alt="" src="heb.png">
+    <div class="hero" style ='background-color: #2ba6cb;'>
+    	<h1>Grocer Inventory System</h1>    
+    </div>
+    	<form class="form-inline" id="searchForm">
+  			<div class="form-group">
+    			
+    				<div class="btn-toolbar mb-1" role="toolbar" aria-label="Toolbar with button groups">
+    					<button type="button" class="btn btn-info" disabled>Search by:</button>
+    					<label class="btn btn-secondary active"> 
+    						<input type="radio" name="searchOptions" id="option_all" value="*" autocomplete="off" checked> All
+						</label>    					
+    					<label class="btn btn-secondary"> 
+    						<input type="radio" name="searchOptions" id="option_sku" value="sku" autocomplete="off"> ID
+						</label>
+						<label class="btn btn-secondary"> 
+							<input type="radio" name="searchOptions" id="option_description" value="description" autocomplete="off"> Description
+						</label> 
+						<label class="btn btn-secondary"> 
+							<input type="radio" name="searchOptions" id="option_lastSold" value="lastSold" autocomplete="off">Last Sold
+						</label>
+						<label class="btn btn-secondary"> 
+							<input type="radio" name="searchOptions" id="option_shelfLife"  value="shelfLife"  autocomplete="off">Shelf Life
+						</label>
+						<label class="btn btn-secondary"> 
+							<input type="radio" name="searchOptions" id="option_shelfLife"  value="department"  autocomplete="off">Department
+						</label>
+						<label class="btn btn-secondary"> 
+							<input type="radio" name="searchOptions" id="option_price"  value="price" autocomplete="off">Price
+						</label>
+						<label class="btn btn-secondary"> 
+							<input type="radio" name="searchOptions" id="option_unit"  value="unit" autocomplete="off">Unit
+						</label>
+						<label class="btn btn-secondary"> 
+							<input type="radio" name="searchOptions" id="option_xFor"  value="xFor" autocomplete="off">xFor
+						</label>
+						<label class="btn btn-secondary"> 
+							<input type="radio" name="searchOptions" id="option_cost"  value="cost" autocomplete="off">Cost
+						</label>
+						
+						
+					
+		    			<input type="text" class="form-control" name='searchText' id="searchValue" aria-describedby="searchHelp" placeholder="Enter search">
+  			
+  					<button type="submit" class="btn btn-success">Search</button>
+  					<button type="button" class="btn btn-primary" id="matchInfo">
+  						found:  <span class="badge badge-light" id="matchedNumber"> 0</span>
+					</button>
+  				</div>
+  				</div>
+	  </form>
+    </div>
+    
+    <table id="itemTable" class="table table-bordered table-hover">
+ 	 <thead>
+   		<tr>
+      		<th scope="col">ID</th>
+      		<th scope="col">Description</th>
+      		<th scope="col">Last sold</th>
+      		<th scope="col">Shelf life</th>
+      		<th scope="col">Department</th>
+      	 	<th scope="col">Price</th>
+      		<th scope="col">Unit</th>
+      		<th scope="col">XFor</th>
+      		<th scope="col">Cost</th>
+    	</tr>
+  	</thead>
+  	<tbody>
+  		
+  	</tbody>
+  	</table>
+   
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> -->
+  </body>
+</html>

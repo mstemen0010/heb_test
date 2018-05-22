@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: hebtestfinal
+Implementation-Version: 0.1.0
+Built-By: Mathias
+Implementation-Vendor-Id: com.heb
+Build-Jdk: 1.8.0_172
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/hebtestfinal
+Created-By: Maven Integration for Eclipse
+
