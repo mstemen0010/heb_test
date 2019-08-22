@@ -10,6 +10,9 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,22 +25,61 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import demo.repository.GroceryEntityRepository;
 import demo.model.GroceryEntity;
 //
+
+@Configuration
+@PropertySource("classpath:foo.properties")
+@ConfigurationProperties(prefix = "mail")
+ class ConfigProperties {
+	 
+    public static class Credentials {
+        private String authMethod;
+        private String username;
+        private String password;
+ 
+       // standard getters and setters
+    }
+    private String host;
+    private int port;
+    private String from;
+    private Credentials credentials;
+    private List<String> defaultRecipients;
+    private Map<String, String> additionalHeaders;
+    
+	private int getPort() {
+		return port;
+	}
+	private void setPort(int port) {
+		this.port = port;
+	}
+	private String getHost() {
+		return host;
+	}
+	private void setHost(String host) {
+		this.host = host;
+	}
+  
+    // standard getters and setters
+}
+
 @RestController
 @RequestMapping("/api/items")
 public class ItemController {
 //
 	boolean clearH2 = false;
+		
 	@Autowired
     private GroceryEntityRepository groceryEntityRepository;
-    
-    
     Map<Long, GroceryEntity> groceryItemsMap = new HashMap<Long, GroceryEntity>();
 
     @Value("${spring.application.name}")
     String appName;
+    
+    @Value("${mail.host}`")
+    String homeName;
  
     public String homePage(Model model) {
         model.addAttribute("appName", appName);
+        
         return "index";
     }
  
